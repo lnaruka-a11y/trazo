@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRAZO - Puzzle Challenge</title>
+    <meta property="og:title" content="TRAZO — Puzzle Challenge">
+    <meta property="og:description" content="Trace the path. Fill the grid. Can you beat my time?">
+    <meta property="og:type" content="website">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -129,10 +132,13 @@
             document.getElementById('time-badge').classList.add('empty');
         }
 
-        // === CHANGE THESE to your actual values ===
-        var PACKAGE_NAME = 'com.gatch.trazo';
-        var APP_SCHEME = 'trazo';
+        // === App identity — must match the built app ===
+        // Package name comes from Unity Player Settings > Android > Package Name.
+        var PACKAGE_NAME = 'com.gatch.zip';
+        var APP_SCHEME = 'trazo';                 // matches <data android:scheme="trazo"/> in AndroidManifest
         var PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=' + PACKAGE_NAME;
+        // TODO: replace with the real App Store link once the iOS app is live.
+        var APP_STORE_URL = 'https://apps.apple.com/';
 
         // Build deep link
         var deepLink = APP_SCHEME + '://play?level=' + level + '&time=' + time;
@@ -164,7 +170,7 @@
 
             setTimeout(function() {
                 if (!document.hidden && !redirected) {
-                    showStoreButton('https://apps.apple.com/'); // Update with your iOS app URL
+                    showStoreButton(APP_STORE_URL);
                 }
             }, 1500);
         } else {
