@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.gatch.zip",
+    "sha256_cert_fingerprints": [
+      "BA:24:7E:95:0D:5E:C0:C4:F9:43:C0:4A:72:5E:69:43:C3:ED:D3:B9:64:8C:E1:38:EF:D0:8D:27:81:2A:13:47"
+    ]
+  }
+}]
